@@ -16,10 +16,10 @@ local systray = wibox.widget.systray()
   systray:set_base_size(20)
   systray.forced_height = 20
 
-  -- Clock / Calendar 24h format
--- local textclock = wibox.widget.textclock('<span font="Roboto Mono bold 9">%d.%m.%Y\n     %H:%M</span>')
+-- Clock / Calendar 24h format
+local textclock = wibox.widget.textclock('<span font="Roboto Mono 12">%H:%M</span>')
 -- Clock / Calendar 12AM/PM fornat
-local textclock = wibox.widget.textclock('<span font="Roboto Mono 12">%I:%M %p</span>')
+-- local textclock = wibox.widget.textclock('<span font="Roboto Mono 12">%I:%M %p</span>')
 -- textclock.forced_height = 36
 
 -- Add a calendar (credits to kylekewley for the original code)

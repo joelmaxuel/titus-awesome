@@ -6,6 +6,8 @@ local dpi = require('beautiful').xresources.apply_dpi
 local theme = {}
 theme.icons = theme_dir .. '/icons/'
 theme.font = 'Roboto medium 10'
+theme.hotkeys_font = 'Noto mono 16'
+theme.hotkeys_description_font = 'Roboto black 14'
 
 -- Colors Pallets
 
@@ -62,6 +64,7 @@ local awesome_overrides =
 
   theme.layout_max = theme.icons .. 'layouts/arrow-expand-all.png'
   theme.layout_tile = theme.icons .. 'layouts/view-quilt.png'
+  theme.layout_floating = theme.icons .. 'layouts/view-ontop.png'
 
   -- Taglist
 

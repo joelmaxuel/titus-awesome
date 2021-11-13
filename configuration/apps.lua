@@ -12,30 +12,29 @@ return {
     rofi = rofi_command,
     lock = 'i3lock-fancy',
     quake = 'terminator',
+    --sysmon = 'terminator -b -x htop',
+    sysmon = 'lxtask',
     screenshot = 'flameshot screen -p ~/Pictures',
     region_screenshot = 'flameshot gui -p ~/Pictures',
     delayed_screenshot = 'flameshot screen -p ~/Pictures -d 5000',
-    browser = 'brave',
-    editor = 'gedit', -- gui text editor
-    social = 'discord',
-    game = rofi_command,
-    files = 'nautilus',
-    music = rofi_command 
+    browser = 'chromium-browser', -- should be firefox but chromium has a useful hwdec for the RPi
+    editor = 'geany', -- gui text editor
+    social = 'sociable',
+    labvm = 'x2goclient',
+    files = 'tuxcmd',
+    media = rofi_command 
   },
   -- List of apps to start once on start-up
   run_on_start_up = {
-    'picom --config ' .. filesystem.get_configuration_dir() .. '/configuration/picom.conf',
-    'nm-applet --indicator', -- wifi
+    -- Try to avoid -- 'compton --config ' .. filesystem.get_configuration_dir() .. '/configuration/compton.conf',
+    -- Wifi handled at CLI -- 'nm-applet --indicator', -- wifi
     'pnmixer', -- shows an audiocontrol applet in systray when installed.
-    --'blueberry-tray', -- Bluetooth tray icon
+    -- Not on Debian? -- 'blueberry-tray', -- Bluetooth tray icon
     'numlockx on', -- enable numlock
-    '/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
+    'nitrogen --restore', -- get back wallpaper
+    -- Not a systemd install -- '/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
     'xfce4-power-manager', -- Power manager
      'flameshot',
-     'synology-drive -minimized',
-     'steam -silent',
-    'feh --randomize --bg-fill ~/.wallpapers/*',
-    '/usr/bin/variety',
     -- Add applications that need to be killed between reloads
     -- to avoid multipled instances, inside the awspawn script
     '~/.config/awesome/configuration/awspawn' -- Spawn "dirty" apps that can linger between sessions

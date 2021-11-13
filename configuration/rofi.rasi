@@ -6,7 +6,7 @@
 configuration {
 	display-drun:    "Activate";
 	display-run:     "Execute";
-	show-icons:      true;	
+	show-icons:      false;	
 	sidebar-mode:    true;
 }
 

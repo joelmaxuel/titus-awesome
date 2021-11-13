@@ -31,7 +31,7 @@ awful.rules.rules = {
   },
   -- Titlebars
   {
-    rule_any = {type = {'dialog'}, class = {'Wicd-client.py', 'calendar.google.com'}},
+    rule_any = {type = { "dialog" }, instance = { "lxtask", "mpv" } },
     properties = {
       placement = awful.placement.centered,
       ontop = true,
